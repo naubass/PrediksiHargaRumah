@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-jumlah_data = 200
+jumlah_data = 500
 np.random.seed(42)
 
 luas = np.random.randint(50, 200, jumlah_data).astype(float)
@@ -24,10 +24,12 @@ for l in lokasi_raw:
     elif acak < 0.2: lokasi.append(l.upper())
     else: lokasi.append(l)
 
+harga_dasar_lokasi = np.where(lokasi_raw == 'Pusat', 200000000, 50000000)
+
 harga = (pd.Series(luas).fillna(100) * 3000000) + \
         (kamar * 20000000) + \
         (listrik_raw * 50000) + \
-        200000000
+        harga_dasar_lokasi
 
 noise = np.random.randint(-20000000, 20000000, jumlah_data)
 harga_akhir = harga + noise

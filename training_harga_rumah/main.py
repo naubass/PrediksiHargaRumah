@@ -55,7 +55,7 @@ with col_info2:
 st.sidebar.header("🛠️ Spesifikasi Rumah")
 input_luas = st.sidebar.slider("Luas Tanah (m²)", 50, 500, 150)
 input_kamar = st.sidebar.slider("Jumlah Kamar", 1, 10, 3)
-input_listrik = st.sidebar.selectbox("Daya Listrik (Watt)", [900, 1300, 2200, 3500, 5500, 6600])
+input_listrik = st.sidebar.selectbox("Daya Listrik (Watt)", [900, 1300, 2200, 3500])
 input_lokasi = st.sidebar.radio("Lokasi", ["Pusat", "Pinggir"])
 
 # preview input
